@@ -1,0 +1,77 @@
+/*
+  Descrição: Folha de estilos principal da interface (login, perfil e consulta).
+  Nome do arquivo: style.css
+  Nome do exercício: Situação de Aprendizagem - Interface Web do Sistema (Login, Perfil e Consulta)
+  Nome do aluno: Felipe Gabriel de Oliveira
+  E-mail: felipe.oliveira139@aluno.cps.sp.gov.br
+  Turma: WEBI-ISWO28-A
+*/
+
+:root {
+  --tinta: #14213D;
+  --papel: #F5F7FA;
+  --cobalto: #2B59C3;
+  --ambar: #F2A93B;
+  --neblina: #DCE3EC;
+  --erro: #B3261E;
+}
+
+body {
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+a { color: var(--cobalto); }
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+
+.btn-primario {
+  background: var(--cobalto);
+  border-color: var(--cobalto);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-primario:hover { background: #1f45a0; border-color: #1f45a0; color: #fff; }
+
+/* ---------- LOGIN ---------- */
+.login-painel {
+  background: var(--tinta) url("../img/fundo-login.svg") center / cover no-repeat;
+  color: #fff;
+  min-height: 220px;
+}
+.login-painel { position: relative; overflow: hidden; }
+.login-hero { position: absolute; inset: 0; z-index: 0; }
+.login-hero img { width: 100%; height: 100%; object-fit: cover; }
+.login-painel > *:not(.login-hero) { position: relative; z-index: 1; }
+.login-painel h1 { font-weight: 800; letter-spacing: -0.02em; }
+.login-painel p { color: var(--neblina); max-width: 34ch; }
+.login-form { max-width: 380px; width: 100%; }
+.dica-acesso {
+  background: #fff;
+  border-left: 4px solid var(--ambar);
+  font-size: .875rem;
+}
+
+/* ---------- NAVEGAÇÃO ---------- */
+.navbar-sistema { background: var(--tinta); }
+.navbar-sistema .nav-link { color: var(--neblina); }
+.navbar-sistema .nav-link:hover,
+.navbar-sistema .nav-link.active { color: #fff; border-bottom: 2px solid var(--ambar); }
+
+/* ---------- PERFIL ---------- */
+.avatar {
+  width: 140px; height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--neblina);
+}
+.perfil-dados dt { font-weight: 600; color: #4a5875; }
+.perfil-dados dd { margin-bottom: 1rem; }
+
+/* ---------- CONSULTA ---------- */
+.tabela-wrap { background: #fff; border-radius: .5rem; border: 1px solid var(--neblina); }
+.table thead th { background: var(--tinta); color: #fff; font-weight: 600; white-space: nowrap; }
+.badge-ativo   { background: #dff3e6; color: #17612f; }
+.badge-ferias  { background: #fdf0d5; color: #7a4d00; }
+.badge-afastado{ background: #fbe0de; color: #8c1d18; }
+.sem-resultado { color: #4a5875; }
